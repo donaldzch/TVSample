@@ -17,4 +17,28 @@
 <resources>
     <string name="hello">Hello World, NewsReaderActivity!</string>
     <string name="app_name">NewsReader</string>
+    <string name="recommendation_item_tag">recommendation</string>
+    <string name="recommendation_navigation_item">精品推荐</string>
+    <string name="my_game_item_tag">my_game</string>
+    <string name="my_game_navigation_item">我的游戏</string>
+    <string name="rank_item_tag">rank</string>
+    <string name="rank_navigation_item">排行榜</string>
+    <string name="all_games_item_tag">all_game</string>
+    <string name="all_games_navigation_item">所有游戏</string>
+    <string-array name="recommendation_sub_nav_item">
+        <item>免费</item>
+        <item>付费</item>
+    </string-array>
+    <string-array name="recommendation_sub_nav_item_free_values">
+        <item>所有类型</item>
+        <item>射击类</item>
+        <item>角色扮演</item>
+        <item>跑酷</item>
+        <item>腾讯</item>
+    </string-array>
+    <string-array name="all_game_nav_item_list_values">
+        <item>免费</item>
+        <item>付费</item>
+        <item>A-Z排列</item>
+    </string-array>
 </resources>

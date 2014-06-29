@@ -15,14 +15,22 @@
 -->
 
 <resources>
-<style name="NewsReaderStyle" parent="android:Theme.Light.NoTitleBar">
+<style name="NewsReaderStyle" parent="android:Theme.Light.NoTitleBar.Fullscreen">
 </style>
 
-<style name="NewsReaderStyle_NoActionBar" parent="android:Theme.Light.NoTitleBar">
+<style name="NewsReaderStyle_NoActionBar" parent="android:Theme.Light.NoTitleBar.Fullscreen">
 </style>
 
 <style name="CategoryButtonStyle" parent="@android:style/Widget.Button">
     <item name="android:textColor">#ffffff</item>
 </style>
-
+    <style name="Widget">
+        <item name="android:textAppearance">?android:textAppearance</item>
+    </style>
+    <style name="Widget.ActionBarView_TabText">
+        <item name="android:textAppearance">@android:style/TextAppearance.Holo.Large</item>
+        <item name="android:textColor">@color/navigation_bar_item_text_dark</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
 </resources>

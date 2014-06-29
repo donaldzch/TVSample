@@ -15,10 +15,10 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.example.android.newsreader"
+      package="com.example.android.tv"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="14" />
+    <uses-sdk android:minSdkVersion="13" android:targetSdkVersion="14" />
     <supports-screens
         android:smallScreens="true"
         android:normalScreens="true"
@@ -27,13 +27,12 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name"
                  android:logo="@drawable/logo" android:theme="@style/NewsReaderStyle">
-        <activity android:name=".NewsReaderActivity" android:label="@string/app_name">
+        <activity android:name="com.example.android.tv.GameInfoActivity"
+                  android:theme="@style/NewsReaderStyle_NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ArticleActivity"
-                  android:theme="@style/NewsReaderStyle_NoActionBar" />
     </application>
 </manifest>

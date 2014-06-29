@@ -20,6 +20,8 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.example.android.tv.R;
+
 /**
  * Activity that displays a particular news article onscreen.
  *

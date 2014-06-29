@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textview_height">25dp</dimen>
+    <dimen name="textview_width">150dp</dimen>
+    <dimen name="ball_radius">30dp</dimen>
+    <dimen name="font_size">16sp</dimen>
+    <dimen name="nav_item_view_height">100dp</dimen>
+    <dimen name="nav_item_expanded_view_height">180dp</dimen>
+    <dimen name="game_image_width">200dp</dimen>
+    <dimen name="game_image_height">200dp</dimen>
+    <dimen name="game_title_height">30dp</dimen>
+    <dimen name="game_rank_height">30dp</dimen>
+    <dimen name="game_item_one_row_width">260dp</dimen>
+    <dimen name="game_item_vertical_spacing">50dp</dimen>
+    <dimen name="game_item_horizontal_spacing">30dp</dimen>
+</resources>

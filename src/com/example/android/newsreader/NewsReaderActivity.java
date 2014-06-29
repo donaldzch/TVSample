@@ -28,6 +28,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.SpinnerAdapter;
 
+import com.example.android.tv.R;
+
 /**
  * Main activity: shows headlines list and articles, if layout permits.
  *
