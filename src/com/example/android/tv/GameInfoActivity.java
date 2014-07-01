@@ -6,6 +6,8 @@ import android.support.v4.view.ViewPager;
 
 import com.example.android.tv.content.CircleIndicatorView;
 import com.example.android.tv.gameinfo.GameInfoAdapter;
+import com.example.android.tv.gameinfo.GameIntroductionFragment;
+import com.example.android.tv.model.GameItem;
 
 /**
  * Created by donaldzhu on 6/28/2014.
@@ -22,8 +24,24 @@ public class GameInfoActivity extends FragmentActivity {
 
         mAdapter = new GameInfoAdapter(getSupportFragmentManager());
         Bundle bundle = new Bundle();
-        bundle.putCharSequence("key", "hello");
-        ContentFragment contentFragment = new ContentFragment();
+        GameItem gameItem = new GameItem("title", R.drawable.game_1, 3);
+        gameItem.setDescription("hello world hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world" +
+                "hello worldhello worldhello worldhello worldhello worldhello world");
+        gameItem.setInstalled(true);
+        gameItem.setVendors(new int[]{R.drawable.game_4, R.drawable.game_5});
+        bundle.putSerializable("game", gameItem);
+        GameIntroductionFragment contentFragment = new GameIntroductionFragment();
         contentFragment.setArguments(bundle);
         Bundle bundle1 = new Bundle();
         bundle1.putCharSequence("key", "world");

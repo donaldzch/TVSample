@@ -10,9 +10,7 @@ import android.widget.LinearLayout;
 
 import com.example.android.tv.R;
 
-/**
- * Created by donaldzhu on 6/28/2014.
- */
+
 public class CircleIndicatorView extends LinearLayout implements ViewPager.OnPageChangeListener {
     private ViewPager mViewPager;
     private int mCurrentPosition;
@@ -25,12 +23,12 @@ public class CircleIndicatorView extends LinearLayout implements ViewPager.OnPag
         for (int i = 0; i < mImageViews.length; i++) {
             ImageView imageView = new ImageView(getContext());
             LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            layoutParams.rightMargin = getResources().getDimensionPixelSize(R.dimen.circle_indicator_spacing);
             imageView.setLayoutParams(layoutParams);
-            imageView.setImageDrawable(getResources().getDrawable(R.drawable.solid_star));
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.grey_circle_indicator));
             addView(imageView);
             mImageViews[i] = imageView;
         }
-        //invalidate();
     }
 
     public void setViewPager(ViewPager view) {
@@ -42,7 +40,7 @@ public class CircleIndicatorView extends LinearLayout implements ViewPager.OnPag
     public void setCurrentItem(int position) {
         mViewPager.setCurrentItem(position, true);
         mCurrentPosition = position;
-        mImageViews[position].setImageDrawable(getResources().getDrawable(R.drawable.empty_star));
+        mImageViews[position].setImageDrawable(getResources().getDrawable(R.drawable.black_circle_indicator));
     }
 
     @Override
@@ -52,9 +50,9 @@ public class CircleIndicatorView extends LinearLayout implements ViewPager.OnPag
 
     @Override
     public void onPageSelected(int i) {
-        mImageViews[mCurrentPosition].setImageDrawable(getResources().getDrawable(R.drawable.solid_star));
+        mImageViews[mCurrentPosition].setImageDrawable(getResources().getDrawable(R.drawable.grey_circle_indicator));
         mCurrentPosition = i;
-        mImageViews[mCurrentPosition].setImageDrawable(getResources().getDrawable(R.drawable.empty_star));
+        mImageViews[mCurrentPosition].setImageDrawable(getResources().getDrawable(R.drawable.black_circle_indicator));
     }
 
     @Override

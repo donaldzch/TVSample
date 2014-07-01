@@ -13,4 +13,8 @@
     <dimen name="game_item_one_row_width">260dp</dimen>
     <dimen name="game_item_vertical_spacing">50dp</dimen>
     <dimen name="game_item_horizontal_spacing">30dp</dimen>
+    <dimen name="game_vendor_image_width">50dp</dimen>
+    <dimen name="game_vendor_image_height">50dp</dimen>
+    <dimen name="game_vendor_image_spacing">20dp</dimen>
+    <dimen name="circle_indicator_spacing">15dp</dimen>
 </resources>

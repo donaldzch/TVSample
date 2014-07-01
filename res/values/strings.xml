@@ -41,4 +41,9 @@
         <item>付费</item>
         <item>A-Z排列</item>
     </string-array>
+    <string name="game_introduction_text">游戏介绍</string>
+    <string name="game_manufacture_text">游戏厂商</string>
+    <string name="start_game_text">开始游戏</string>
+    <string name="download_game_text">下载游戏</string>
+    <string name="user_points_text">您的点数： %1$d 点</string>
 </resources>

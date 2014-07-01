@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StarRankView">
+        <attr name="good_reputation_image" format="reference" />
+        <attr name="bad_reputation_image" format="integer"/>
+    </declare-styleable>
+</resources>

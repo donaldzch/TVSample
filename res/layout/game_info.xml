@@ -9,26 +9,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="30dp"/>
-    <LinearLayout
-        android:id="@+id/pager_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_top_bar"
-        android:orientation="vertical">
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            />
 
-    </LinearLayout>
     <com.example.android.tv.FootBar
         android:id="@+id/layout_foot_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"/>
     <com.example.android.tv.content.CircleIndicatorView
         android:id="@+id/indicator"
@@ -38,5 +24,19 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@id/layout_foot_bar"
         />
+    <LinearLayout
+        android:id="@+id/pager_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_top_bar"
+        android:layout_above="@id/indicator"
+        android:orientation="vertical">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            />
 
+    </LinearLayout>
 </RelativeLayout>
