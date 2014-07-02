@@ -32,8 +32,6 @@ public class GameIntroductionFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-
-
     }
 
     @Override

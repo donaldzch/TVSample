@@ -46,4 +46,5 @@
     <string name="start_game_text">开始游戏</string>
     <string name="download_game_text">下载游戏</string>
     <string name="user_points_text">您的点数： %1$d 点</string>
+    <string name="star_player_title">本周明星玩家</string>
 </resources>

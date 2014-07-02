@@ -1,0 +1,84 @@
+package com.example.android.tv.gameinfo;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import com.example.android.tv.R;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public class GameAchievementListAdapter extends BaseAdapter {
+    private List<AchievementDetail> mGameAchievements;
+    private Context mContext;
+
+    private class AchievementDetail {
+        private CharSequence mTitle;
+        private CharSequence mValue;
+
+        AchievementDetail(CharSequence title, CharSequence value) {
+            mTitle = title;
+            mValue = value;
+        }
+
+        public CharSequence getTitle() {
+            return mTitle;
+        }
+
+        public CharSequence getValue() {
+            return mValue;
+        }
+    }
+
+    private class DetailView {
+        TextView mDetailTitle;
+        TextView mDetailValue;
+    }
+
+    public GameAchievementListAdapter(Context context, Map<CharSequence, CharSequence> gameAchievements) {
+        mContext = context;
+        mGameAchievements = new ArrayList<AchievementDetail>();
+        for (CharSequence key : gameAchievements.keySet()) {
+            mGameAchievements.add(new AchievementDetail(key, gameAchievements.get(key)));
+        }
+    }
+
+    @Override
+    public int getCount() {
+        return mGameAchievements.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return mGameAchievements.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        AchievementDetail detail = (AchievementDetail)getItem(position);
+        DetailView detailView = null;
+        if (convertView == null) {
+            detailView = new DetailView();
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.achievement_list_item, parent, false);
+            detailView.mDetailTitle = (TextView)convertView.findViewById(R.id.achievement_title);
+            detailView.mDetailValue = (TextView)convertView.findViewById(R.id.achievement_value);
+            convertView.setTag(detailView);
+        } else {
+            detailView = (DetailView)convertView.getTag();
+        }
+
+        detailView.mDetailTitle.setText(detail.getTitle());
+        detailView.mDetailValue.setText(detail.getValue());
+
+        return convertView;
+    }
+}

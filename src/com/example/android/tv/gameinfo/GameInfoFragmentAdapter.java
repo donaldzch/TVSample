@@ -7,12 +7,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by donaldzhu on 6/28/2014.
- */
-public class GameInfoAdapter extends FragmentPagerAdapter {
+public class GameInfoFragmentAdapter extends FragmentPagerAdapter {
     private List<Fragment> mFragments;
-    public GameInfoAdapter(FragmentManager fm) {
+    public GameInfoFragmentAdapter(FragmentManager fm) {
         super(fm);
         mFragments = new ArrayList<Fragment>();
     }

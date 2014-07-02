@@ -4,17 +4,27 @@ package com.example.android.tv.model;
 import java.io.Serializable;
 
 public class GameItem implements Serializable {
+    private Long mGameId;
     private CharSequence mTitle;
     private int mRank;
     private int mImageId;
     private int[] mVendors;
     private CharSequence mDescription;
     private boolean mIsInstalled;
+    private GameRankingList mGameRankingList;
 
     public GameItem(CharSequence title, int imageId, int rank) {
         mTitle = title;
         mImageId = imageId;
         mRank = rank;
+    }
+
+    public void setGameId(Long gameId) {
+        mGameId = gameId;
+    }
+
+    public Long getGameId() {
+        return mGameId;
     }
 
     public CharSequence getTitle() {
@@ -63,5 +73,13 @@ public class GameItem implements Serializable {
 
     public void setInstalled(boolean installed) {
         mIsInstalled = true;
+    }
+
+    public void setGameRankingList(GameRankingList gameRankingList) {
+        mGameRankingList = gameRankingList;
+    }
+
+    public GameRankingList getGameRankingList() {
+        return mGameRankingList;
     }
 }
