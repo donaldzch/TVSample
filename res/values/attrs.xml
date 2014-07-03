@@ -2,6 +2,13 @@
 <resources>
     <declare-styleable name="StarRankView">
         <attr name="good_reputation_image" format="reference" />
-        <attr name="bad_reputation_image" format="integer"/>
+        <attr name="bad_reputation_image" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="NavigationItemView">
+        <attr name="expand" format="boolean" />
+        <attr name="layout" format="reference" />
+        <attr name="expanded_height" format="dimension" />
+        <attr name="normal_height" format="dimension" />
+        <attr name="item_name" format="string"/>
     </declare-styleable>
 </resources>

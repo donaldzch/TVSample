@@ -5,36 +5,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public abstract class NavigationItem {
-    protected final Context mContext;
+public class NavigationItem {
     protected CharSequence mTag;
-    protected CharSequence mText;
     protected NavigationItemView mItemView;
-
-    public View renderView(ViewGroup parent) {
-        return mItemView.render(parent);
-    }
 
     public NavigationItemView getItemView() {
         return mItemView;
     }
 
-    public NavigationItem(Context context) {
-        mContext = context;
+    public Long getCategoryId() {
+        return mItemView.getCategoryId();
     }
 
-    public CharSequence getText() {
-        return mText;
-    }
-
-    public NavigationItem setText(CharSequence charSequence) {
-        mText = charSequence;
-        return this;
-    }
-
-    public NavigationItem setTag(CharSequence tag) {
-        mTag = tag;
-        return this;
+    public NavigationItem(NavigationItemView itemView, NavigationItemClickListener listener) {
+        mTag = itemView.getTag().toString();
+        mItemView = itemView;
+        mItemView.setItemClickListener(listener);
     }
 
     public CharSequence getTag() {

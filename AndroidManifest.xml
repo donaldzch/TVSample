@@ -27,7 +27,7 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name"
                  android:logo="@drawable/logo" android:theme="@style/NewsReaderStyle">
-        <activity android:name="com.example.android.tv.GameInfoActivity"
+        <activity android:name="com.example.android.tv.TVActivity"
                   android:theme="@style/NewsReaderStyle_NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

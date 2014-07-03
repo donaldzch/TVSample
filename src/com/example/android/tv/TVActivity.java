@@ -6,9 +6,6 @@ import android.widget.Toast;
 
 import com.example.android.tv.navigation.NavigationItem;
 
-/**
- * Created by donaldzhu on 6/23/2014.
- */
 public class TVActivity  extends FragmentActivity
         implements NavigationBar.OnNavigationItemSelectedListener {
     private TopBar mTopBar;
@@ -26,7 +23,5 @@ public class TVActivity  extends FragmentActivity
     @Override
     public void onNavigationItemSelectedListener(NavigationItem item) {
         Toast.makeText(this, item.getTag(), Toast.LENGTH_SHORT).show();
-        ContentFragment contentFragment = (ContentFragment)getSupportFragmentManager().findFragmentById(R.id.content);
-        contentFragment.display("hello");
     }
 }
