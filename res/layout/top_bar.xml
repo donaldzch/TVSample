@@ -7,8 +7,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/back_btn"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/back_btn_margin_left"
+        android:layout_marginTop="@dimen/back_btn_margin_top"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:src="@drawable/back_btn"/>
@@ -17,9 +17,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/user_icon"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginTop="@dimen/user_icon_margin_top"
+        android:layout_marginLeft="@dimen/user_icon_margin_left"
+        android:layout_marginRight="@dimen/user_icon_margin_right"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:src="@drawable/icon"/>
@@ -27,9 +27,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
         android:id="@+id/user_name"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/user_name_margin_top"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@id/user_icon" />
 </RelativeLayout>

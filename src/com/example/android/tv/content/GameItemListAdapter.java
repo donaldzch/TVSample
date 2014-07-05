@@ -4,44 +4,29 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+
+import com.example.android.tv.adapter.CommonAdapter;
 import com.example.android.tv.model.GameItem;
 import java.util.List;
 
 
-public class GameInfoAdapter extends BaseAdapter{
-	private List<GameItem> mGameItems;
-	private Context mContext;
+public class GameItemListAdapter extends CommonAdapter<GameItem> {
 	private int selectIndex = -1;
 
-    public GameInfoAdapter(Context context, List<GameItem> gameItems) {
-        mContext = context;
-        mGameItems = gameItems;
+    public GameItemListAdapter(Context context, List<GameItem> gameItems) {
+        super(context, gameItems);
     }
-
-	@Override
-	public int getCount() {
-		return mGameItems.size();
-	}
-	@Override
-	public Object getItem(int position) {
-		return mGameItems.get(position);
-	}
-
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
         GameItem gameItem = (GameItem)getItem(position);
-        HorizontalListItemView itemView;
+        GameItemLayoutView itemView;
         if (convertView == null) {
-            itemView = new HorizontalListItemView(mContext);
+            itemView = new GameItemLayoutView(mContext);
             convertView = itemView.render(gameItem.getImageId(), gameItem.getTitle(), gameItem.getRank());
             convertView.setTag(itemView);
         } else {
-            itemView = (HorizontalListItemView)convertView.getTag();
+            itemView = (GameItemLayoutView)convertView.getTag();
         }
 
         if (selectIndex == position) {
@@ -52,7 +37,6 @@ public class GameInfoAdapter extends BaseAdapter{
 
 		return convertView;
 	}
-
 
 	public void setSelectIndex(int i){
 		selectIndex = i;

@@ -27,7 +27,7 @@ public class GameAchievementFragment extends Fragment {
     private GameAchievementListAdapter mAchievementAdapter;
     private GameAchievementListAdapter mStarPlayerAdapter;
     private GridView mRecommendedGames;
-    private ImageAdapter mRecommendedGamesAdapter;
+    private RecommendedGameImageListAdapter mRecommendedGamesAdapter;
 
     @Override
     public void onCreate(android.os.Bundle savedInstanceState) {
@@ -35,8 +35,8 @@ public class GameAchievementFragment extends Fragment {
         mGameItem = (GameItem)getArguments().getSerializable("game");
         mGameAchievement = (GameAchievement)getArguments().getSerializable("achievement");
         mAchievementAdapter = new GameAchievementListAdapter(getActivity(), mGameAchievement.getAchievements());
-        mStarPlayerAdapter = new GameAchievementListAdapter(getActivity(), mGameItem.getGameRankingList().getRankedUsers());
-        mRecommendedGamesAdapter = new ImageAdapter(getActivity(), Arrays.asList(new Integer[] {R.drawable.game_5, R.drawable.game_4, R.drawable.game_7, R.drawable.game_8}));
+        //mStarPlayerAdapter = new GameAchievementListAdapter(getActivity(), mGameItem.getGameRankingList().getRankedUsers());
+        mRecommendedGamesAdapter = new RecommendedGameImageListAdapter(getActivity(), Arrays.asList(new Integer[] {R.drawable.game_5, R.drawable.game_4, R.drawable.game_7, R.drawable.game_8}));
     }
 
     @Override

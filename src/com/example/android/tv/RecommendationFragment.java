@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
-import com.example.android.tv.content.GameInfoAdapter;
+import com.example.android.tv.content.GameItemListAdapter;
 import com.example.android.tv.model.GameItem;
 import com.example.android.tv.service.GameInfoService;
 
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class RecommendationFragment extends Fragment {
     private GridView mGridView;
-    private GameInfoAdapter mAdapter;
+    private GameItemListAdapter mAdapter;
     private GameInfoService mGameInfoService;
 
     @Override
@@ -36,7 +36,7 @@ public class RecommendationFragment extends Fragment {
         mGridView.setHorizontalSpacing(getResources().getDimensionPixelSize(R.dimen.game_item_horizontal_spacing));
         mGridView.setStretchMode(GridView.STRETCH_COLUMN_WIDTH);
         mGridView.setNumColumns(gameItems.size());
-        mAdapter = new GameInfoAdapter(getActivity(), gameItems);
+        mAdapter = new GameItemListAdapter(getActivity(), gameItems);
 
         mGridView.setAdapter(mAdapter);
 

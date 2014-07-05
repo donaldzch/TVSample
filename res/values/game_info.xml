@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="top_bar_margin_bottom">30dp</dimen>
+    <dimen name="foot_bar_margin_bottom">20dp</dimen>
+    <dimen name="indicator_padding">10dp</dimen>
+    <dimen name="view_pager_margin_bottom">30dp</dimen>
+</resources>

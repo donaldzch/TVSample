@@ -1,18 +1,18 @@
 package com.example.android.tv.model;
 
 import java.io.Serializable;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameAchievement implements Serializable {
     private Long mUserId;
     private Long mGameId;
-    private Map<CharSequence, CharSequence> mAchievements;
+    private List<AchievementDetail> mAchievements;
 
     public GameAchievement(Long userId, Long gameId) {
         mUserId = userId;
         mGameId = gameId;
-        mAchievements = new TreeMap<CharSequence, CharSequence>();
+        mAchievements = new ArrayList<AchievementDetail>();
     }
 
     public void setUserId(Long userId) {
@@ -31,15 +31,33 @@ public class GameAchievement implements Serializable {
         return mGameId;
     }
 
-    public void setAchievements(Map<CharSequence, CharSequence> achievements) {
+    public void setAchievements(List<AchievementDetail> achievements) {
         mAchievements = achievements;
     }
 
-    public Map<CharSequence, CharSequence> getAchievements() {
+    public List<AchievementDetail> getAchievements() {
         return mAchievements;
     }
 
     public void addAchievement(CharSequence title, CharSequence value) {
-        mAchievements.put(title, value);
+        mAchievements.add(new AchievementDetail(title, value));
+    }
+
+    public class AchievementDetail implements Serializable {
+        private CharSequence mTitle;
+        private CharSequence mValue;
+
+        AchievementDetail(CharSequence title, CharSequence value) {
+            mTitle = title;
+            mValue = value;
+        }
+
+        public CharSequence getTitle() {
+            return mTitle;
+        }
+
+        public CharSequence getValue() {
+            return mValue;
+        }
     }
 }

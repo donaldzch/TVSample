@@ -10,14 +10,14 @@ import android.widget.TextView;
 
 import com.example.android.tv.R;
 
-public class HorizontalListItemView  {
+public class GameItemLayoutView {
     private Context mContext;
     private RelativeLayout mItemView;
     private ImageView mGameImage;
     private TextView mGameTitle;
     private StarRankView mRankView;
 
-    public HorizontalListItemView(Context context) {
+    public GameItemLayoutView(Context context) {
         mContext = context;
     }
 

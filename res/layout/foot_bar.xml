@@ -10,8 +10,8 @@
         android:id="@+id/search_btn"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="@dimen/search_btn_margin_left"
+        android:layout_marginBottom="@dimen/search_btn_margin_bottom"
         android:src="@drawable/search_btn"/>
 
     <ImageView
@@ -20,17 +20,16 @@
         android:id="@+id/setting_btn"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/search_btn"
-        android:layout_marginLeft="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="@dimen/setting_btn_margin_left"
+        android:layout_marginBottom="@dimen/setting_btn_margin_bottom"
         android:src="@drawable/setting_btn"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:id="@+id/points_view"
+        android:id="@+id/user_points"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="150dp"/>
+        android:layout_marginBottom="@dimen/user_points_margin_bottom"
+        android:layout_marginRight="@dimen/user_points_margin_right"/>
 </RelativeLayout>

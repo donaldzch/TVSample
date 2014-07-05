@@ -8,41 +8,28 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.android.tv.R;
+import com.example.android.tv.adapter.CommonAdapter;
 import com.example.android.tv.model.CategoryItem;
 
 import java.util.List;
 
-public class NavigationListViewAdapter extends BaseAdapter {
-    private Context mContext;
-    private List<CategoryItem> mCategoryItems;
-
+public class NavigationListViewAdapter extends CommonAdapter<CategoryItem> {
     public NavigationListViewAdapter(Context context, List<CategoryItem> categoryItems) {
-        mContext = context;
-        mCategoryItems = categoryItems;
+        super(context, categoryItems);
     }
 
     public void reset(List<CategoryItem> categoryItems) {
-        mCategoryItems = categoryItems;
-    }
-
-    @Override
-    public int getCount() {
-        return mCategoryItems.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return mCategoryItems.get(position);
+        mObjects = categoryItems;
     }
 
     @Override
     public long getItemId(int position) {
-        return mCategoryItems.get(position).getId();
+        return mObjects.get(position).getId();
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        CategoryItem categoryItem = mCategoryItems.get(position);
+        CategoryItem categoryItem = (CategoryItem)getItem(position);
         TextView textView;
         if (convertView == null) {
            textView = (TextView)LayoutInflater.from(mContext).inflate(R.layout.custom_text_view, parent, false);
