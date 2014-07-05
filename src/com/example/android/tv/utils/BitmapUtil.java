@@ -11,39 +11,20 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/**
- * @author yanzi
- *����Bitmap��byte[] Drawable����ת��
- */
 public class BitmapUtil {
-	
-	/**
-	 * @param drawable
-	 * drawable ת  Bitmap
-	 */
+
 	public static Bitmap drawableToBitmap(Drawable drawable) {
-		// ȡ drawable �ĳ���
 		int w = drawable.getIntrinsicWidth();
 		int h = drawable.getIntrinsicHeight();
-
-		// ȡ drawable ����ɫ��ʽ
 		Bitmap.Config config = drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
 				: Bitmap.Config.RGB_565;
-		// ������Ӧ bitmap
 		Bitmap bitmap = Bitmap.createBitmap(w, h, config);
-		// ������Ӧ bitmap �Ļ���
 		Canvas canvas = new Canvas(bitmap);
 		drawable.setBounds(0, 0, w, h);
-		// �� drawable ���ݻ���������
 		drawable.draw(canvas);
 		return bitmap;
 	}
 	
-	/**
-	 * @param bitmap
-	 * @param roundPx
-	 * ��ȡԲ��ͼƬ
-	 */
 	public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, float roundPx) {
         int w = bitmap.getWidth();
         int h = bitmap.getHeight();

@@ -3,8 +3,6 @@ package com.example.android.tv.service;
 import android.content.Context;
 
 import com.example.android.tv.R;
-import com.example.android.tv.gameinfo.GameIntroductionFragment;
-import com.example.android.tv.model.GameAchievement;
 import com.example.android.tv.model.GameItem;
 import com.example.android.tv.model.GameRankingList;
 

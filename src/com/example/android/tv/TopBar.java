@@ -7,9 +7,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-/**
- * Created by donaldzhu on 6/26/2014.
- */
 public class TopBar extends RelativeLayout {
     private ImageView mBackBtn;
     private ImageView mUserIcon;

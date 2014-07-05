@@ -7,16 +7,12 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.android.tv.R;
 import com.example.android.tv.model.CategoryItem;
-
-import java.util.List;
-import java.util.Map;
 
 public abstract class NavigationItemView extends RelativeLayout {
     protected Long mCategoryId;
@@ -56,7 +52,7 @@ public abstract class NavigationItemView extends RelativeLayout {
     }
 
     abstract public void expand();
-    abstract public void setUpListView(CategoryItem categories);
+    abstract public void setUpListView(CategoryItem categoryItem);
 
     abstract public View.OnClickListener getViewClickListener();
 

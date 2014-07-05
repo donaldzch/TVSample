@@ -11,6 +11,6 @@ public class GameItemView extends LinearLayout {
 
     public GameItemView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater.from(context).inflate(R.layout.horizontal_list_sub_item, this);
+        LayoutInflater.from(context).inflate(R.layout.game_item, this);
     }
 }

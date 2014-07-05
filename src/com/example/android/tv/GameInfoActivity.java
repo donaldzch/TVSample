@@ -8,7 +8,6 @@ import com.example.android.tv.content.CircleIndicatorView;
 import com.example.android.tv.gameinfo.GameAchievementFragment;
 import com.example.android.tv.gameinfo.GameInfoFragmentAdapter;
 import com.example.android.tv.gameinfo.GameIntroductionFragment;
-import com.example.android.tv.model.GameItem;
 import com.example.android.tv.service.GameInfoService;
 import com.example.android.tv.service.UserInfoService;
 
@@ -34,13 +33,8 @@ public class GameInfoActivity extends FragmentActivity {
         GameAchievementFragment contentFragment1 = new GameAchievementFragment();
 
         contentFragment1.setArguments(bundle1);
-        ContentFragment contentFragment2 = new ContentFragment();
-        Bundle bundle2 = new Bundle();
-        bundle2.putCharSequence("key", "you");
-        contentFragment2.setArguments(bundle2);
         mAdapter.addFragment(contentFragment1);
         mAdapter.addFragment(contentFragment);
-        mAdapter.addFragment(contentFragment2);
 
         mPager = (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);

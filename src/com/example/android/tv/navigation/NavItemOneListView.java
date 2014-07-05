@@ -4,15 +4,10 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.android.tv.R;
 import com.example.android.tv.model.CategoryItem;
-
-import java.util.List;
-import java.util.Map;
 
 public class NavItemOneListView extends NavigationItemView {
     private ListView mListView;
