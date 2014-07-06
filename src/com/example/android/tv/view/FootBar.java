@@ -1,4 +1,4 @@
-package com.example.android.tv;
+package com.example.android.tv.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,9 +7,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-/**
- * Created by donaldzhu on 6/26/2014.
- */
+import com.example.android.tv.R;
+
 public class FootBar extends RelativeLayout {
     private ImageView mSearchBtn;
     private ImageView mSettingBtn;
@@ -20,6 +19,10 @@ public class FootBar extends RelativeLayout {
         LayoutInflater.from(context).inflate(R.layout.foot_bar, this);
         mSearchBtn = (ImageView)findViewById(R.id.search_btn);
         mSettingBtn = (ImageView)findViewById(R.id.setting_btn);
-        mPointsView = (TextView)findViewById(R.id.points_view);
+        mPointsView = (TextView)findViewById(R.id.user_points);
+    }
+
+    public void setUserPoints(Long userPoints) {
+
     }
 }

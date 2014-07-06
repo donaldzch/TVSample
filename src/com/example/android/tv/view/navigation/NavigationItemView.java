@@ -1,4 +1,4 @@
-package com.example.android.tv.navigation;
+package com.example.android.tv.view.navigation;
 
 import android.content.Context;
 import android.content.res.Resources;

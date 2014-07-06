@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     >
-    <com.example.android.tv.content.GameItemView
+    <com.example.android.tv.view.content.GameItemView
         android:id="@+id/game_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

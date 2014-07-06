@@ -4,7 +4,7 @@
     xmlns:tv="http://schemas.android.com/apk/res/com.example.android.tv"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.example.android.tv.navigation.NavItemTwoListView
+    <com.example.android.tv.view.navigation.NavItemTwoListView
         android:id="@+id/recommendation_nav_item"
         android:tag="@string/recommendation_item_tag"
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         tv:layout="@layout/nav_item_with_two_list"
         tv:item_name="@string/recommendation_navigation_item"
     />
-    <com.example.android.tv.navigation.NavItemTextView
+    <com.example.android.tv.view.navigation.NavItemTextView
         android:id="@+id/my_game_nav_item"
         android:tag="@string/my_game_item_tag"
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
         tv:layout="@layout/nav_item_with_one_list"
         tv:item_name="@string/my_game_navigation_item"
         />
-    <com.example.android.tv.navigation.NavItemTwoListView
+    <com.example.android.tv.view.navigation.NavItemTwoListView
         android:id="@+id/ranking_list_nav_item"
         android:tag="@string/rank_item_tag"
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
         tv:layout="@layout/nav_item_with_two_list"
         tv:item_name="@string/rank_navigation_item"
         />
-    <com.example.android.tv.navigation.NavItemOneListView
+    <com.example.android.tv.view.navigation.NavItemOneListView
         android:id="@+id/all_game_nav_item"
         android:tag="@string/all_games_item_tag"
         android:layout_width="match_parent"

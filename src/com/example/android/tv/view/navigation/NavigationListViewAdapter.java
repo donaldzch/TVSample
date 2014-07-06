@@ -1,10 +1,9 @@
-package com.example.android.tv.navigation;
+package com.example.android.tv.view.navigation;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.android.tv.R;

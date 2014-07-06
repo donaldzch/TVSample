@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
-import com.example.android.tv.content.CircleIndicatorView;
-import com.example.android.tv.gameinfo.GameAchievementFragment;
-import com.example.android.tv.gameinfo.GameInfoFragmentAdapter;
-import com.example.android.tv.gameinfo.GameIntroductionFragment;
+import com.example.android.tv.view.gameinfo.CircleIndicatorView;
+import com.example.android.tv.view.gameinfo.GameAchievementFragment;
+import com.example.android.tv.adapter.GameInfoFragmentAdapter;
+import com.example.android.tv.view.gameinfo.GameIntroductionFragment;
 import com.example.android.tv.service.GameInfoService;
 import com.example.android.tv.service.UserInfoService;
 

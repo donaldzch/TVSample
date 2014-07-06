@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/game_title_height"
             android:layout_gravity="center"/>
-        <com.example.android.tv.content.StarRankView
+        <com.example.android.tv.view.content.StarRankView
             android:id="@+id/game_rank"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/game_rank_height"

@@ -4,7 +4,11 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
-import com.example.android.tv.navigation.NavigationItem;
+import com.example.android.tv.view.content.RecommendationFragment;
+import com.example.android.tv.view.navigation.NavigationItem;
+import com.example.android.tv.view.FootBar;
+import com.example.android.tv.view.NavigationBar;
+import com.example.android.tv.view.TopBar;
 
 public class TVActivity  extends FragmentActivity
         implements NavigationBar.OnNavigationItemSelectedListener {

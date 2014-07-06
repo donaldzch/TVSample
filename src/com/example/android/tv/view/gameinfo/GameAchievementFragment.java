@@ -1,4 +1,4 @@
-package com.example.android.tv.gameinfo;
+package com.example.android.tv.view.gameinfo;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.android.tv.R;
+import com.example.android.tv.adapter.GameAchievementListAdapter;
+import com.example.android.tv.adapter.RecommendedGameImageListAdapter;
 import com.example.android.tv.model.GameAchievement;
 import com.example.android.tv.model.GameItem;
 

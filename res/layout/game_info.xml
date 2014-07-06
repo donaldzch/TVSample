@@ -3,20 +3,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/scene_one_bg">
-    <com.example.android.tv.TopBar
+    <com.example.android.tv.view.TopBar
         android:id="@+id/layout_top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/top_bar_margin_bottom"/>
 
-    <com.example.android.tv.FootBar
+    <com.example.android.tv.view.FootBar
         android:id="@+id/layout_foot_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/foot_bar_margin_bottom"/>
-    <com.example.android.tv.content.CircleIndicatorView
+    <com.example.android.tv.view.gameinfo.CircleIndicatorView
         android:id="@+id/indicator"
         android:padding="@dimen/indicator_padding"
         android:layout_height="wrap_content"

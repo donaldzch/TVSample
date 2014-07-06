@@ -1,4 +1,4 @@
-package com.example.android.tv.content;
+package com.example.android.tv.view.gameinfo;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

@@ -1,4 +1,4 @@
-package com.example.android.tv.content;
+package com.example.android.tv.view.content;
 
 import android.content.Context;
 import android.view.LayoutInflater;

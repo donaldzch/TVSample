@@ -1,4 +1,4 @@
-package com.example.android.tv.gameinfo;
+package com.example.android.tv.view.gameinfo;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.tv.R;
-import com.example.android.tv.content.GameVendorListView;
-import com.example.android.tv.content.StarRankView;
+import com.example.android.tv.view.content.GameVendorListView;
+import com.example.android.tv.view.content.StarRankView;
 import com.example.android.tv.model.GameItem;
 
 public class GameIntroductionFragment extends Fragment {

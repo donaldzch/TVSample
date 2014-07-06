@@ -1,4 +1,4 @@
-package com.example.android.tv;
+package com.example.android.tv.view.content;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
-import com.example.android.tv.content.GameItemListAdapter;
+import com.example.android.tv.R;
+import com.example.android.tv.adapter.GameItemListAdapter;
 import com.example.android.tv.model.GameItem;
 import com.example.android.tv.service.GameInfoService;
 

@@ -1,11 +1,10 @@
-package com.example.android.tv.content;
+package com.example.android.tv.adapter;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 
-import com.example.android.tv.adapter.CommonAdapter;
+import com.example.android.tv.view.content.GameItemLayoutView;
 import com.example.android.tv.model.GameItem;
 import java.util.List;
 

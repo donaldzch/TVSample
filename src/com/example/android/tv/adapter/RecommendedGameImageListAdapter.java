@@ -1,4 +1,4 @@
-package com.example.android.tv.gameinfo;
+package com.example.android.tv.adapter;
 
 import android.content.Context;
 import android.view.View;

@@ -18,7 +18,7 @@
             android:text="@string/game_introduction_text"
             android:textSize="@dimen/game_introduction_text_size"
             android:layout_alignParentTop="true"/>
-        <com.example.android.tv.content.GameVendorListView
+        <com.example.android.tv.view.content.GameVendorListView
             android:id="@+id/game_vendor_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/game_title_text_size"
                     android:layout_marginRight="@dimen/game_title_margin_right"/>
-                <com.example.android.tv.content.StarRankView
+                <com.example.android.tv.view.content.StarRankView
                     android:id="@+id/game_rank"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.android.tv;
+package com.example.android.tv.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.android.tv.navigation.NavItemOneListView;
-import com.example.android.tv.navigation.NavItemTextView;
-import com.example.android.tv.navigation.NavItemTwoListView;
-import com.example.android.tv.navigation.NavigationItem;
-import com.example.android.tv.navigation.NavigationItemAdapter;
-import com.example.android.tv.navigation.NavigationItemClickListener;
+import com.example.android.tv.R;
+import com.example.android.tv.view.navigation.NavItemOneListView;
+import com.example.android.tv.view.navigation.NavItemTextView;
+import com.example.android.tv.view.navigation.NavItemTwoListView;
+import com.example.android.tv.view.navigation.NavigationItem;
+import com.example.android.tv.view.navigation.NavigationItemAdapter;
+import com.example.android.tv.view.navigation.NavigationItemClickListener;
 import com.example.android.tv.service.NavigationService;
 
 
