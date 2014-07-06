@@ -30,7 +30,7 @@ public class NavItemOneListView extends NavigationItemView {
     @Override
     public void setUpListView(CategoryItem categoryItem) {
         mCategoryId = categoryItem.getId();
-        mListView = (ListView)findViewById(R.id.listView);
+        mListView = (ListView)findViewById(R.id.category_list);
         mListView.setAdapter(new NavigationListViewAdapter(getContext(), categoryItem.getChildrenItems()));
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

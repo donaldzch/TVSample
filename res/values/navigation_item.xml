@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nav_item_text_height">30dp</dimen>
+    <dimen name="nav_item_text_margin_left">20dp</dimen>
+    <dimen name="nav_item_text_margin_top">20dp</dimen>
+    <dimen name="single_list_view_width">100dp</dimen>
+    <dimen name="single_list_view_height">120dp</dimen>
+    <dimen name="single_list_view_margin_left">60dp</dimen>
+    <dimen name="main_list_view_width">50dp</dimen>
+    <dimen name="main_list_view_height">120dp</dimen>
+    <dimen name="main_list_view_margin_left">60dp</dimen>
+    <dimen name="sub_list_view_width">100dp</dimen>
+    <dimen name="sub_list_view_height">120dp</dimen>
+</resources>

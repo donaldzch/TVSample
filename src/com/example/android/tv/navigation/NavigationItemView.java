@@ -34,7 +34,7 @@ public abstract class NavigationItemView extends RelativeLayout {
         mExpandHeight = typedArray.getDimensionPixelSize(R.styleable.NavigationItemView_expanded_height, -1);
         mNormalHeight = typedArray.getDimensionPixelSize(R.styleable.NavigationItemView_normal_height, -1);
 
-        mItemTextView = (TextView)findViewById(R.id.navItemText);
+        mItemTextView = (TextView)findViewById(R.id.nav_item_text);
         mItemTextView.setText(typedArray.getString(R.styleable.NavigationItemView_item_name));
         mItemTextView.setOnClickListener(getViewClickListener());
         typedArray.recycle();

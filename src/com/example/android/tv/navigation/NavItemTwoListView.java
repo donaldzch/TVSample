@@ -48,7 +48,7 @@ public class NavItemTwoListView extends NavigationItemView {
         for (CategoryItem item : mCategories) {
             mSubCategories.put(item.getId(), item.getChildrenItems());
         }
-        mMainList = (ListView)findViewById(R.id.listView);
+        mMainList = (ListView)findViewById(R.id.category_list);
         mMainList.setAdapter(new NavigationListViewAdapter(getContext(), mCategories));
         mMainList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -64,7 +64,7 @@ public class NavItemTwoListView extends NavigationItemView {
             }
         });
         mMainCategoryId = ((CategoryItem)mMainList.getAdapter().getItem(0)).getId();
-        mSubList = (ListView)findViewById(R.id.subListView);
+        mSubList = (ListView)findViewById(R.id.sub_category_list);
         mSubListAdapter = new NavigationListViewAdapter(getContext(), mSubCategories.get(mMainCategoryId));
         mSubList.setAdapter(mSubListAdapter);
         mSubList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

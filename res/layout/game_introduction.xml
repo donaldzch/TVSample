@@ -5,16 +5,18 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
+        android:id="@+id/game_brief_introduction"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginLeft="@dimen/game_brief_introduction_margin_left"
+        android:layout_marginRight="@dimen/game_brief_introduction_margin_right">
         <TextView
+            android:id="@+id/game_introduction_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/game_introduction_text"
-            android:textSize="60sp"
+            android:textSize="@dimen/game_introduction_text_size"
             android:layout_alignParentTop="true"/>
         <com.example.android.tv.content.GameVendorListView
             android:id="@+id/game_vendor_image"
@@ -22,11 +24,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"/>
         <TextView
+            android:id="@+id/game_vendor_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:layout_above="@id/game_vendor_image"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/game_vendor_text_margin_bottom"
             android:text="@string/game_manufacture_text"/>
     </RelativeLayout>
 
@@ -36,13 +39,14 @@
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:src="@drawable/game_1"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="@dimen/game_introduction_image_margin_right"
         android:scaleType="fitXY" />
     <LinearLayout
+        android:id="@+id/game_description_layout"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="4"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="@dimen/game_description_layout_margin_right"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,10 +54,10 @@
             android:layout_weight="3"
             android:background="@drawable/linear_layout_bg"
             android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp" >
+            android:paddingTop="@dimen/game_description_layout_padding_top"
+            android:paddingBottom="@dimen/game_description_layout_padding_bottom"
+            android:paddingLeft="@dimen/game_description_layout_padding_left"
+            android:paddingRight="@dimen/game_description_layout_padding_right" >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,8 +66,8 @@
                     android:id="@+id/game_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="25sp"
-                    android:layout_marginRight="15dp"/>
+                    android:textSize="@dimen/game_title_text_size"
+                    android:layout_marginRight="@dimen/game_title_margin_right"/>
                 <com.example.android.tv.content.StarRankView
                     android:id="@+id/game_rank"
                     android:layout_width="wrap_content"
@@ -73,7 +77,7 @@
                     tv:bad_reputation_image="@drawable/empty_black_star" />
             </LinearLayout>
             <ScrollView
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/game_description_margin_top"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
@@ -82,14 +86,13 @@
                 android:scrollbarStyle="outsideOverlay"
                 android:fadeScrollbars="false"
                 android:scrollbarThumbVertical="@drawable/scroll_bar"
-                android:scrollbarSize="20dp">
+                android:scrollbarSize="@dimen/game_description_scroll_bar_size">
                 <TextView
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/game_description_margin_left"
+                    android:layout_marginRight="@dimen/game_description_margin_right"
                     android:id="@+id/game_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:singleLine="false"
                 />
             </ScrollView>
@@ -105,18 +108,17 @@
                 android:layout_centerInParent="true">
                 <ImageView
                     android:id="@+id/action_btn"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="@dimen/action_btn_image_width"
+                    android:layout_height="@dimen/action_btn_image_height"
+                    android:layout_marginTop="@dimen/action_btn_margin_top"
+                    android:layout_marginRight="@dimen/action_btn_margin_right"
                     android:scaleType="fitXY" />
                 <TextView
                     android:id="@+id/action_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="60sp"
-                />
+                    android:textSize="@dimen/action_text_size" />
             </LinearLayout>
-            </RelativeLayout>
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

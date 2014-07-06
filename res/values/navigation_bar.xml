@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nav_item_view_height">100dp</dimen>
+    <dimen name="nav_item_expanded_view_height">160dp</dimen>
+    <dimen name="nav_item_view_layout_height">100dp</dimen>
+</resources>

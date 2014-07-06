@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="game_image_width">200dp</dimen>
+    <dimen name="game_image_height">200dp</dimen>
+    <dimen name="game_title_height">30dp</dimen>
+    <dimen name="game_rank_height">30dp</dimen>
+    <dimen name="game_item_view_margin_top">100dp</dimen>
+    <dimen name="game_item_view_margin_bottom">100dp</dimen>
+</resources>
