@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.android.tv.R;
 import com.example.android.tv.model.GameItem;
+import com.example.android.tv.model.GameItems;
 import com.example.android.tv.model.GameRankingList;
 
 import java.util.ArrayList;
@@ -69,6 +70,15 @@ public class GameInfoService {
     public List<GameItem> getGameItems() {
         return new ArrayList<GameItem>(mGameItems.values());
     }
+
+    public GameItems getGameItemsByTag(String tag) {
+        GameItems gameItems = new GameItems();
+
+
+        return gameItems;
+    }
+
+    public 
 
     public GameItem getGameItem(Long gameId) {
         return mGameItems.get(gameId);

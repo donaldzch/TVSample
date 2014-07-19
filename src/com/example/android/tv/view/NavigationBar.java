@@ -26,7 +26,7 @@ public class NavigationBar extends Fragment implements NavigationItemClickListen
     private NavigationService mService;
 
     public interface OnNavigationItemSelectedListener {
-        public void onNavigationItemSelectedListener(NavigationItem item);
+        public void onNavigationItemSelectedListener(Long tag, Long mainCategory, Long subCategory);
     }
     /**
      * Default constructor required by framework.
@@ -89,6 +89,7 @@ public class NavigationBar extends Fragment implements NavigationItemClickListen
     public void onItemClick(Long tag, Long mainCategory, Long subCategory) {
         mAdapter.setCurrentItem(tag);
         Toast.makeText(getActivity(), "tag: " + tag + " main: " + mainCategory + " sub: " + subCategory, Toast.LENGTH_SHORT).show();
+        mItemSelectedListener.onNavigationItemSelectedListener(tag, mainCategory, subCategory);
     }
 
 }

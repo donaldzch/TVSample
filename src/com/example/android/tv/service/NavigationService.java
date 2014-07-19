@@ -15,9 +15,11 @@ public class NavigationService {
     private static NavigationService INSTANCE = null;
     private Context mContext;
     private Map<CharSequence, CategoryItem> mCategoryItems;
+    private Map<Long, CategoryItem> mCategoryItemsById;
     private NavigationService(Context context) {
         mContext = context;
         mCategoryItems = new HashMap<CharSequence, CategoryItem>();
+        mCategoryItemsById = new HashMap<Long, CategoryItem>();
         makeNavigationCategories();
     }
 
@@ -75,9 +77,17 @@ public class NavigationService {
         mCategoryItems.put(rankingListNav.getName(), rankingListNav);
         mCategoryItems.put(allGameNav.getName(), rankingListNav);
 
+        mCategoryItemsById.put(recommendedNav.getId(), recommendedNav);
+        mCategoryItemsById.put(myGameNav.getId(), myGameNav);
+        mCategoryItemsById.put(rankingListNav.getId(), rankingListNav);
+        mCategoryItemsById.put(allGameNav.getId(), allGameNav);
     }
 
     public CategoryItem getCategory(CharSequence name) {
         return mCategoryItems.get(name);
+    }
+
+    public CategoryItem getCategory(Long categoryId) {
+        return mCategoryItemsById.get(categoryId);
     }
 }

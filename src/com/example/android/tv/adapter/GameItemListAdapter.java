@@ -40,4 +40,9 @@ public class GameItemListAdapter extends CommonAdapter<GameItem> {
 	public void setSelectIndex(int i){
 		selectIndex = i;
 	}
+
+    public void reset(List<GameItem> gameItems) {
+        mObjects = gameItems;
+        notifyDataSetChanged();
+    }
 }

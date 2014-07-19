@@ -9,35 +9,35 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
+import com.example.android.tv.Constants;
 import com.example.android.tv.R;
 import com.example.android.tv.adapter.GameItemListAdapter;
 import com.example.android.tv.model.GameItem;
+import com.example.android.tv.model.GameItems;
 import com.example.android.tv.service.GameInfoService;
 
 import java.util.List;
 
-public class RecommendationFragment extends Fragment {
+public class GameItemListFragment extends Fragment {
     private GridView mGridView;
     private GameItemListAdapter mAdapter;
-    private GameInfoService mGameInfoService;
+    private GameItems mGameItems;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mGameInfoService = GameInfoService.getInstance(getActivity());
+        mGameItems = (GameItems)getArguments().getSerializable(Constants.GAME_ITEMS_KEY);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        List<GameItem> gameItems = mGameInfoService.getGameItems();
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(gameItems.size() * getResources().getDimensionPixelSize(R.dimen.game_item_one_row_width), ViewGroup.LayoutParams.WRAP_CONTENT);
-        mGridView.setLayoutParams(params);
+        viewChange();
         mGridView.setColumnWidth(getResources().getDimensionPixelSize(R.dimen.game_image_width));
         mGridView.setHorizontalSpacing(getResources().getDimensionPixelSize(R.dimen.game_item_horizontal_spacing));
         mGridView.setStretchMode(GridView.STRETCH_COLUMN_WIDTH);
-        mGridView.setNumColumns(gameItems.size());
-        mAdapter = new GameItemListAdapter(getActivity(), gameItems);
+        mGridView.setNumColumns(mGameItems.size());
+        mAdapter = new GameItemListAdapter(getActivity(), mGameItems.getGameItems());
 
         mGridView.setAdapter(mAdapter);
 
@@ -58,5 +58,16 @@ public class RecommendationFragment extends Fragment {
         View view = inflater.inflate(R.layout.recomendation_fragment, container, false);
         mGridView = (GridView)view.findViewById(R.id.grid_view);
         return view;
+    }
+
+    public void refresh(GameItems gameItems) {
+        mGameItems = gameItems;
+        mAdapter.reset(gameItems.getGameItems());
+        viewChange();
+    }
+
+    private void viewChange() {
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(mGameItems.size() * getResources().getDimensionPixelSize(R.dimen.game_item_one_row_width), ViewGroup.LayoutParams.WRAP_CONTENT);
+        mGridView.setLayoutParams(params);
     }
 }
