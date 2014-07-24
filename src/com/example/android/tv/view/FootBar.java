@@ -23,6 +23,6 @@ public class FootBar extends RelativeLayout {
     }
 
     public void setUserPoints(Long userPoints) {
-
+        mPointsView.setText(String.format(getContext().getString(R.string.user_points_text), userPoints));
     }
 }

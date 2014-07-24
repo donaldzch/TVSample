@@ -66,4 +66,8 @@ public class UserInfoService {
     public List<UserInfo> getAllUsers() {
         return new ArrayList<UserInfo>(mUsers.values());
     }
+
+    public boolean login(String username, String password) {
+        return false;
+    }
 }

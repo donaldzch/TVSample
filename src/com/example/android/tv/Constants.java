@@ -3,6 +3,7 @@ package com.example.android.tv;
 public class Constants {
     public static final String GAME_ITEM_KEY = "game_item";
     public static final String GAME_ITEMS_KEY = "game_items";
+    public static final String CURRENT_USER_KEY = "current_user";
     public static final String RECOMMENDATION_FRAGMENT = "recommendation_fragment";
     public static final String MY_GAME_FRAGMENT = "my_game_fragment";
     public static final String RANKING_LIST_FRAGMENT = "ranking_list_fragment";

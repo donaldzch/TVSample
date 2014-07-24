@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.android.tv.R;
+import com.example.android.tv.model.UserInfo;
 
 public class TopBar extends RelativeLayout {
     private ImageView mBackBtn;
@@ -20,5 +21,10 @@ public class TopBar extends RelativeLayout {
         mBackBtn = (ImageView)findViewById(R.id.back_btn);
         mUserIcon = (ImageView)findViewById(R.id.user_icon);
         mUserName = (TextView)findViewById(R.id.user_name);
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        mUserName.setText(userInfo.getUserName());
+        mUserIcon.setImageResource(getContext().getResources().getIdentifier(userInfo.getUserIcon(), "drawable", getContext().getPackageName()));
     }
 }
