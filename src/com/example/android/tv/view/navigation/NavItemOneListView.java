@@ -29,7 +29,6 @@ public class NavItemOneListView extends NavigationItemView {
 
     @Override
     public void setUpListView(CategoryItem categoryItem) {
-        mCategoryId = categoryItem.getId();
         mListView = (ListView)findViewById(R.id.category_list);
         mListView.setAdapter(new NavigationListViewAdapter(getContext(), categoryItem.getChildrenItems()));
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -38,7 +37,7 @@ public class NavItemOneListView extends NavigationItemView {
                 Long mainCategory = l;
                 if (!mainCategory.equals(mChoice)) {
                     mChoice = mainCategory;
-                    mItemClickListener.onItemClick(mCategoryId, mChoice, null);
+                    mItemClickListener.onItemClick(getTag().toString(), mChoice, null);
                 }
             }
         });
@@ -52,7 +51,7 @@ public class NavItemOneListView extends NavigationItemView {
             public void onClick(View view) {
                 mExpand = !mExpand;
                 expand();
-                mItemClickListener.onItemClick(mCategoryId, mChoice, null);
+                mItemClickListener.onItemClick(getTag().toString(), mChoice, null);
             }
         };
     }

@@ -19,7 +19,7 @@ public class NavItemTextView extends NavItemOneListView {
 
     @Override
     public void setUpListView(CategoryItem categoryItem) {
-        mCategoryId = categoryItem.getId();
+
     }
 
     @Override
@@ -27,7 +27,7 @@ public class NavItemTextView extends NavItemOneListView {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mItemClickListener.onItemClick(mCategoryId, null, null);
+                mItemClickListener.onItemClick(getTag().toString(), null, null);
             }
         };
     }

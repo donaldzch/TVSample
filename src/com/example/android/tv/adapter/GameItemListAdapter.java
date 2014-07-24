@@ -22,7 +22,7 @@ public class GameItemListAdapter extends CommonAdapter<GameItem> {
         GameItemLayoutView itemView;
         if (convertView == null) {
             itemView = new GameItemLayoutView(mContext);
-            convertView = itemView.render(gameItem.getImageId(), gameItem.getTitle(), gameItem.getRank());
+            convertView = itemView.render(gameItem);
             convertView.setTag(itemView);
         } else {
             itemView = (GameItemLayoutView)convertView.getTag();
@@ -44,5 +44,9 @@ public class GameItemListAdapter extends CommonAdapter<GameItem> {
     public void reset(List<GameItem> gameItems) {
         mObjects = gameItems;
         notifyDataSetChanged();
+    }
+
+    public GameItem getCurrentItem() {
+        return (GameItem)getItem(selectIndex);
     }
 }

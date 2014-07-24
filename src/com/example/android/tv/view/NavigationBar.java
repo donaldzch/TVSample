@@ -10,23 +10,23 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.android.tv.R;
+import com.example.android.tv.service.CategoryService;
 import com.example.android.tv.view.navigation.NavItemOneListView;
 import com.example.android.tv.view.navigation.NavItemTextView;
 import com.example.android.tv.view.navigation.NavItemTwoListView;
 import com.example.android.tv.view.navigation.NavigationItem;
 import com.example.android.tv.view.navigation.NavigationItemAdapter;
 import com.example.android.tv.view.navigation.NavigationItemClickListener;
-import com.example.android.tv.service.NavigationService;
 
 
 public class NavigationBar extends Fragment implements NavigationItemClickListener {
     private Context mContext;
     private NavigationItemAdapter mAdapter;
     private OnNavigationItemSelectedListener mItemSelectedListener;
-    private NavigationService mService;
+    private CategoryService mService;
 
     public interface OnNavigationItemSelectedListener {
-        public void onNavigationItemSelectedListener(Long tag, Long mainCategory, Long subCategory);
+        public void onNavigationItemSelectedListener(String tag, Long mainCategory, Long subCategory);
     }
     /**
      * Default constructor required by framework.
@@ -57,7 +57,7 @@ public class NavigationBar extends Fragment implements NavigationItemClickListen
         super.onCreate(savedInstanceState);
         mContext = getActivity();
         mAdapter = new NavigationItemAdapter();
-        mService = NavigationService.getInstance(mContext);
+        mService = CategoryService.getInstance(mContext);
     }
 
     @Override
@@ -80,13 +80,13 @@ public class NavigationBar extends Fragment implements NavigationItemClickListen
         allGameNav.setUpListView(mService.getCategory(allGameNav.getTag().toString()));
         mAdapter.addNavigationItem(new NavigationItem(allGameNav, this));
 
-        mAdapter.setCurrentItem(recommendationNav.getCategoryId());
+        mAdapter.setCurrentItem(recommendationNav.getTag().toString());
         return view;
     }
 
 
     @Override
-    public void onItemClick(Long tag, Long mainCategory, Long subCategory) {
+    public void onItemClick(String tag, Long mainCategory, Long subCategory) {
         mAdapter.setCurrentItem(tag);
         Toast.makeText(getActivity(), "tag: " + tag + " main: " + mainCategory + " sub: " + subCategory, Toast.LENGTH_SHORT).show();
         mItemSelectedListener.onNavigationItemSelectedListener(tag, mainCategory, subCategory);

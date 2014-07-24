@@ -5,24 +5,24 @@ import java.util.Map;
 
 public class NavigationItemAdapter {
 
-    private Map<Long, NavigationItem> mNavigationItems;
+    private Map<String, NavigationItem> mNavigationItems;
     private NavigationItem mCurrentItem;
 
     public NavigationItemAdapter() {
-        mNavigationItems = new HashMap<Long, NavigationItem>();
+        mNavigationItems = new HashMap<String, NavigationItem>();
         mCurrentItem = null;
     }
 
     public void addNavigationItem(NavigationItem navigationItem) {
-        mNavigationItems.put(navigationItem.getCategoryId(), navigationItem);
+        mNavigationItems.put(navigationItem.getTag().toString(), navigationItem);
     }
 
-    public void setCurrentItem(Long categoryId) {
+    public void setCurrentItem(String tag) {
         if (mCurrentItem == null) {
-            mCurrentItem = mNavigationItems.get(categoryId);
+            mCurrentItem = mNavigationItems.get(tag);
         } else {
             mCurrentItem.setSelected(false);
-            mCurrentItem = mNavigationItems.get(categoryId);
+            mCurrentItem = mNavigationItems.get(tag);
         }
         mCurrentItem.setSelected(true);
     }

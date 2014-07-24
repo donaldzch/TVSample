@@ -1,9 +1,11 @@
 package com.example.android.tv;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
+import com.example.android.tv.model.GameItem;
 import com.example.android.tv.view.gameinfo.CircleIndicatorView;
 import com.example.android.tv.view.gameinfo.GameAchievementFragment;
 import com.example.android.tv.adapter.GameInfoFragmentAdapter;
@@ -22,19 +24,25 @@ public class GameInfoActivity extends FragmentActivity {
         setContentView(R.layout.game_info);
 
         mAdapter = new GameInfoFragmentAdapter(getSupportFragmentManager());
+
+        Intent intent = getIntent();
+
+        GameItem gameItem = (GameItem)intent.getSerializableExtra(Constants.GAME_ITEM_KEY);
         Bundle bundle = new Bundle();
 
-        bundle.putSerializable("game", GameInfoService.getInstance(this).getGameItem(100L));
-        GameIntroductionFragment contentFragment = new GameIntroductionFragment();
-        contentFragment.setArguments(bundle);
+        bundle.putSerializable(Constants.GAME_ITEM_KEY, gameItem);
+        GameIntroductionFragment introductionFragment = new GameIntroductionFragment();
+        introductionFragment.setArguments(bundle);
         Bundle bundle1 = new Bundle();
-        bundle1.putSerializable("game", GameInfoService.getInstance(this).getGameItem(100L));
-        bundle1.putSerializable("achievement", UserInfoService.getInstance(this).getCurrentUser().getGameAchievements().get(100L));
-        GameAchievementFragment contentFragment1 = new GameAchievementFragment();
 
-        contentFragment1.setArguments(bundle1);
-        mAdapter.addFragment(contentFragment1);
-        mAdapter.addFragment(contentFragment);
+
+        bundle1.putSerializable(Constants.GAME_ITEM_KEY, gameItem);
+        bundle1.putSerializable("achievement", UserInfoService.getInstance(this).getCurrentUser().getGameAchievements().get(100L));
+        GameAchievementFragment achieveFragment = new GameAchievementFragment();
+
+        achieveFragment.setArguments(bundle1);
+        mAdapter.addFragment(introductionFragment);
+        mAdapter.addFragment(achieveFragment);
 
         mPager = (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);

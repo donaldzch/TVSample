@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<game>
+    <id>2</id>
+    <type>1</type>
+    <catgory>1</catgory>
+    <rank>5</rank>
+    <price>3000</price>
+    <vendors>
+        <vendor>vendor_1</vendor>
+        <vendor>vendor_2</vendor>
+    </vendors>
+    <description>
+        Hello, Game 2!
+    </description>
+    <icon>game_2</icon>
+    <image>game_2</image>
+    <screenshots>
+        <image>game_1_screenshot_1</image>
+        <image>game_1_screenshot_2</image>
+    </screenshots>
+    <videos>
+        <video>
+            <url></url>
+            <description></description>
+        </video>
+    </videos>
+</game>

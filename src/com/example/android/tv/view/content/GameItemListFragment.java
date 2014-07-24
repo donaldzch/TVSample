@@ -1,5 +1,6 @@
 package com.example.android.tv.view.content;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,13 +11,11 @@ import android.widget.GridView;
 import android.widget.LinearLayout;
 
 import com.example.android.tv.Constants;
+import com.example.android.tv.GameInfoActivity;
 import com.example.android.tv.R;
 import com.example.android.tv.adapter.GameItemListAdapter;
-import com.example.android.tv.model.GameItem;
 import com.example.android.tv.model.GameItems;
-import com.example.android.tv.service.GameInfoService;
 
-import java.util.List;
 
 public class GameItemListFragment extends Fragment {
     private GridView mGridView;
@@ -44,8 +43,22 @@ public class GameItemListFragment extends Fragment {
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mAdapter.setSelectIndex(position);
+                Intent intent = new Intent(getActivity(), GameInfoActivity.class);
+                intent.putExtra(Constants.GAME_ITEM_KEY, mAdapter.getCurrentItem());
+                startActivity(intent);
+            }
+        });
+
+        mGridView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                mAdapter.setSelectIndex(i);
                 mAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 

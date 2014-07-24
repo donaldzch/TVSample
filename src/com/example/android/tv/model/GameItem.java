@@ -6,12 +6,22 @@ import java.io.Serializable;
 public class GameItem implements Serializable {
     private Long mGameId;
     private CharSequence mTitle;
+    private Long mType;
+    private String mIcon;
+    private String mImage;
     private int mRank;
     private int mImageId;
-    private int[] mVendors;
+    private String[] mVendors;
     private CharSequence mDescription;
+    private Long mPrice;
+    private String[] mScreenShots;
+
     private boolean mIsInstalled;
     private GameRankingList mGameRankingList;
+
+    public GameItem() {
+
+    }
 
     public GameItem(CharSequence title, int imageId, int rank) {
         mTitle = title;
@@ -35,6 +45,46 @@ public class GameItem implements Serializable {
         this.mTitle = Title;
     }
 
+    public void setType(Long type) {
+        mType = type;
+    }
+
+    public Long getType() {
+        return mType;
+    }
+
+    public void setIcon(String icon) {
+        mIcon = icon;
+    }
+
+    public String getIcon() {
+        return mIcon;
+    }
+
+    public void setImage(String image) {
+        mImage = image;
+    }
+
+    public String getImage() {
+        return mImage;
+    }
+
+    public void setPrice(Long price) {
+        mPrice = price;
+    }
+
+    public Long getPrice() {
+        return mPrice;
+    }
+
+    public void setScreenShots(String[] screenShots) {
+        mScreenShots = screenShots;
+    }
+
+    public String[] getScreenShots() {
+        return mScreenShots;
+    }
+
     public int getImageId() {
         return mImageId;
     }
@@ -51,11 +101,11 @@ public class GameItem implements Serializable {
         this.mRank = rank;
     }
 
-    public int[] getVendors() {
+    public String[] getVendors() {
         return mVendors;
     }
 
-    public void setVendors(int[] vendors) {
+    public void setVendors(String[] vendors) {
         mVendors = vendors;
     }
 

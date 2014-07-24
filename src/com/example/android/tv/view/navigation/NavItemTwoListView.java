@@ -42,7 +42,6 @@ public class NavItemTwoListView extends NavigationItemView {
 
     @Override
     public void setUpListView(CategoryItem categoryItem) {
-        mCategoryId = categoryItem.getId();
         mCategories = categoryItem.getChildrenItems();
         mSubCategories = new HashMap<Long, List<CategoryItem>>();
         for (CategoryItem item : mCategories) {
@@ -59,7 +58,7 @@ public class NavItemTwoListView extends NavigationItemView {
                     mSubListAdapter.reset(mSubCategories.get(mainCategory));
                     mSubListAdapter.notifyDataSetChanged();
                     mSubCategoryId = mSubCategories.get(mMainCategoryId).get(0).getId();
-                    mItemClickListener.onItemClick(mCategoryId, mMainCategoryId, mSubCategoryId);
+                    mItemClickListener.onItemClick(getTag().toString(), mMainCategoryId, mSubCategoryId);
                 }
             }
         });
@@ -73,7 +72,7 @@ public class NavItemTwoListView extends NavigationItemView {
                 Long subCategory = l;
                 if (!mSubCategoryId.equals(subCategory)) {
                     mSubCategoryId = subCategory;
-                    mItemClickListener.onItemClick(mCategoryId, mMainCategoryId, mSubCategoryId);
+                    mItemClickListener.onItemClick(getTag().toString(), mMainCategoryId, mSubCategoryId);
                 }
             }
         });
@@ -88,7 +87,7 @@ public class NavItemTwoListView extends NavigationItemView {
                 mExpand = !mExpand;
                 expand();
                 if (mExpand) {
-                    mItemClickListener.onItemClick(mCategoryId, mMainCategoryId, mSubCategoryId);
+                    mItemClickListener.onItemClick(getTag().toString(), mMainCategoryId, mSubCategoryId);
                 }
             }
         };

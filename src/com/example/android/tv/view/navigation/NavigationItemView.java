@@ -15,7 +15,6 @@ import com.example.android.tv.R;
 import com.example.android.tv.model.CategoryItem;
 
 public abstract class NavigationItemView extends RelativeLayout {
-    protected Long mCategoryId;
     protected Resources mResources;
     protected TextView mItemTextView;
     protected boolean mExpand;
@@ -58,10 +57,6 @@ public abstract class NavigationItemView extends RelativeLayout {
 
     public void setItemClickListener(NavigationItemClickListener itemClickListener) {
         mItemClickListener = itemClickListener;
-    }
-
-    public Long getCategoryId() {
-        return mCategoryId;
     }
 
     @Override

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AllGameCategory>
+    <id>2</id>
+    <value>all_game</value>
+    <MainCategories>
+        <category>
+            <id>0</id>
+            <value>免费</value>
+        </category>
+        <category>
+            <id>1</id>
+            <value>付费</value>
+        </category>
+        <category>
+            <id>2</id>
+            <value>A-Z排列</value>
+        </category>
+    </MainCategories>
+</AllGameCategory>

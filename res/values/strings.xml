@@ -25,26 +25,11 @@
     <string name="rank_navigation_item">排行榜</string>
     <string name="all_games_item_tag">all_game</string>
     <string name="all_games_navigation_item">所有游戏</string>
-    <string-array name="recommendation_sub_nav_item">
-        <item>免费</item>
-        <item>付费</item>
-    </string-array>
-    <string-array name="recommendation_sub_nav_item_free_values">
-        <item>所有类型</item>
-        <item>射击类</item>
-        <item>角色扮演</item>
-        <item>跑酷</item>
-        <item>腾讯</item>
-    </string-array>
-    <string-array name="all_game_nav_item_list_values">
-        <item>免费</item>
-        <item>付费</item>
-        <item>A-Z排列</item>
-    </string-array>
     <string name="game_introduction_text">游戏介绍</string>
     <string name="game_manufacture_text">游戏厂商</string>
     <string name="start_game_text">开始游戏</string>
     <string name="download_game_text">下载游戏</string>
     <string name="user_points_text">您的点数： %1$d 点</string>
     <string name="star_player_title">本周明星玩家</string>
+    <string name="game_price_text">%1$d 点</string>
 </resources>

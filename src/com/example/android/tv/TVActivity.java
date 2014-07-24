@@ -1,15 +1,12 @@
 package com.example.android.tv;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.widget.Toast;
 
 import com.example.android.tv.model.CategoryItem;
+import com.example.android.tv.service.CategoryService;
 import com.example.android.tv.service.GameInfoService;
-import com.example.android.tv.service.NavigationService;
 import com.example.android.tv.view.content.GameItemListFragment;
-import com.example.android.tv.view.navigation.NavigationItem;
 import com.example.android.tv.view.FootBar;
 import com.example.android.tv.view.NavigationBar;
 import com.example.android.tv.view.TopBar;
@@ -19,23 +16,23 @@ public class TVActivity  extends FragmentActivity
     private TopBar mTopBar;
     private FootBar mFootBar;
     private NavigationBar mNavigationBar;
-    private Long mCurrentFragment;
     private String mCurrentFragmentTag;
     private GameInfoService mGameInfoService;
-    private NavigationService mNavigationService;
+    private CategoryService mCategoryService;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         mNavigationBar = (NavigationBar)getSupportFragmentManager().findFragmentById(R.id.nav_bar);
         mGameInfoService = GameInfoService.getInstance(this);
+        mCategoryService = CategoryService.getInstance(this);
         startFragmentTransition(Constants.RECOMMENDATION_FRAGMENT);
     }
 
     @Override
-    public void onNavigationItemSelectedListener(Long tag, Long mainCategory, Long subCategory) {
-        if (mCurrentFragment.equals(tag)) {
-            getCurrentFragment().refresh();
+    public void onNavigationItemSelectedListener(String tag, Long mainCategory, Long subCategory) {
+        if (mCurrentFragmentTag.equals(tag)) {
+            getCurrentFragment().refresh(mGameInfoService.getGameItemsByTagAndCategory(tag, mainCategory, subCategory));
         } else {
             startFragmentTransition(tag);
         }
@@ -46,17 +43,13 @@ public class TVActivity  extends FragmentActivity
     }
 
     private void startFragmentTransition(String tag) {
-        CategoryItem categoryItem = mNavigationService.getCategory(tag);
-        startFragmentTransition(categoryItem.getId());
-    }
-
-    private void startFragmentTransition(Long tag) {
-        CategoryItem categoryItem = mNavigationService.getCategory(tag);
-        mCurrentFragment = categoryItem.getId();
+        CategoryItem categoryItem = mCategoryService.getCategory(tag);
+        mCurrentFragmentTag = tag;
         Bundle bundle = new Bundle();
-        bundle.putSerializable(Constants.GAME_ITEMS_KEY, mGameInfoService.getGameItemsByTag(categoryItem.getName().toString()));
-        GameItemListFragment recommendationFragment = new GameItemListFragment();
-        recommendationFragment.setArguments(bundle);
-        getSupportFragmentManager().beginTransaction().add(R.id.content, recommendationFragment, categoryItem.getName().toString()).commit();
+
+        bundle.putSerializable(Constants.GAME_ITEMS_KEY, mGameInfoService.getGameItemsByCategory(categoryItem));
+        GameItemListFragment contentFragment = new GameItemListFragment();
+        contentFragment.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().add(R.id.content, contentFragment, tag).commit();
     }
 }

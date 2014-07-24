@@ -19,14 +19,14 @@ public class GameVendorListView extends LinearLayout {
         LayoutInflater.from(context).inflate(R.layout.game_vendor_list, this);
     }
 
-    public void render(int[] drawables) {
+    public void render(String[] drawables) {
         for (int i = 0; i < drawables.length; i++) {
             ImageView imageView = new ImageView(getContext());
             LinearLayout.LayoutParams layoutParams = new LayoutParams(R.dimen.game_vendor_image_width, R.dimen.game_vendor_image_height);
             layoutParams.setMargins(0, 0, getResources().getDimensionPixelSize(R.dimen.game_vendor_image_spacing), 0);
             imageView.setLayoutParams(layoutParams);
-
-            imageView.setImageBitmap(getPropThumnail(drawables[i]));
+            int resId = getContext().getResources().getIdentifier(drawables[i], "drawable", getContext().getPackageName());
+            imageView.setImageBitmap(getPropThumnail(resId));
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             addView(imageView);
         }

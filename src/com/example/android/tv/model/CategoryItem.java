@@ -1,12 +1,17 @@
 package com.example.android.tv.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryItem implements Serializable {
     private Long mId;
     private CharSequence mName;
     private List<CategoryItem> mChildrenItems;
+
+    public CategoryItem() {
+        mChildrenItems = new ArrayList<CategoryItem>();
+    }
 
     public CategoryItem(Long id, CharSequence name) {
         mId = id;
@@ -38,4 +43,7 @@ public class CategoryItem implements Serializable {
         return mChildrenItems;
     }
 
+    public void addSubCategory(CategoryItem item) {
+        mChildrenItems.add(item);
+    }
 }
