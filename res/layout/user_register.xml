@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="@dimen/register_activity_layout_width"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <TextView
+            android:layout_width="@dimen/register_item_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/register_name_label_margin_bottom"
+            android:id="@+id/register_name_label"
+            android:layout_marginRight="@dimen/register_name_label_margin_right"
+            android:textSize="@dimen/register_name_label_text_size"
+            android:gravity="right"
+            android:text="@string/register_name_label_text" />
+
+        <EditText
+            android:layout_width="@dimen/register_name_text_layout_width"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:id="@+id/register_name_text"
+            android:layout_toRightOf="@id/register_name_label"
+            android:layout_alignBottom="@id/register_name_label"
+            />
+
+        <TextView
+            android:layout_width="@dimen/register_item_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/register_name_label_margin_bottom"
+            android:id="@+id/register_email_label"
+            android:layout_marginRight="@dimen/register_name_label_margin_right"
+            android:textSize="@dimen/register_name_label_text_size"
+            android:gravity="right"
+            android:text="@string/register_email_label_text"
+            android:layout_below="@id/register_name_label"/>
+
+        <EditText
+            android:layout_width="@dimen/register_name_text_layout_width"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:id="@+id/register_email_text"
+            android:layout_toRightOf="@+id/register_email_label"
+            android:layout_below="@id/register_name_text"
+            android:layout_alignBottom="@id/register_email_label"
+            />
+
+        <TextView
+            android:layout_width="@dimen/register_item_layout_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_password_label"
+            android:textSize="@dimen/register_password_label_text_size"
+            android:gravity="right"
+            android:text="@string/register_password_label_text"
+            android:layout_marginBottom="@dimen/register_password_label_margin_bottom"
+            android:layout_below="@id/register_email_label"
+            android:layout_alignRight="@id/register_email_label"/>
+
+        <EditText
+            android:layout_width="@dimen/register_password_text_layout_width"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/register_password_text"
+            android:layout_toRightOf="@+id/register_password_label"
+            android:layout_below="@id/register_email_label"
+            android:layout_alignLeft="@id/register_email_text"
+            />
+        <TextView
+            android:layout_width="@dimen/register_item_layout_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_password_reenter_label"
+            android:textSize="@dimen/register_password_label_text_size"
+            android:gravity="right"
+            android:text="@string/register_password_reenter_label_text"
+            android:layout_marginBottom="@dimen/register_password_label_margin_bottom"
+            android:layout_below="@id/register_password_label"
+            android:layout_alignRight="@id/register_password_label"
+             />
+
+        <EditText
+            android:layout_width="@dimen/register_password_text_layout_width"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/register_password_reenter_text"
+            android:layout_toRightOf="@+id/register_password_reenter_label"
+            android:layout_below="@id/register_password_text"
+            android:layout_alignBottom="@id/register_password_reenter_label"
+            android:layout_alignLeft="@id/register_password_text"
+        />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_password_reenter_label"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:layout_width="@dimen/register_confirm_btn_layout_width"
+                android:layout_height="@dimen/register_confirm_btn_layout_height"
+                android:text="@string/register_confirm_btn_text"
+                android:id="@+id/register_confirm_btn"
+                android:textSize="@dimen/register_confirm_btn_text_size"
+                android:layout_marginRight="@dimen/register_confirm_btn_margin_right"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

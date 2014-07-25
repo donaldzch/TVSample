@@ -2,11 +2,10 @@ package com.example.android.tv.service;
 
 import android.content.Context;
 
-import com.example.android.tv.model.GameAchievement;
 import com.example.android.tv.model.UserInfo;
+import com.example.android.tv.utils.UserInfoRepository;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,10 +16,12 @@ public class UserInfoService {
     private static UserInfoService INSTANCE = null;
     private UserInfo mCurrentUser;
     private Map<Long, UserInfo> mUsers = new HashMap<Long, UserInfo>();
+    private UserInfoRepository mUserRepo;
+    private static Long mUserCount = 0L;
 
     private UserInfoService(Context context) {
         mContext = context;
-        makeUsers();
+        mUserRepo = new UserInfoRepository(context);
     }
 
     public static UserInfoService getInstance(Context context) {
@@ -30,25 +31,6 @@ public class UserInfoService {
             }
         }
         return INSTANCE;
-    }
-
-    private void makeUsers() {
-        for (int i = 1; i <= 3; i++) {
-            UserInfo userInfo = new UserInfo();
-            userInfo.setUserId(Long.valueOf(i));
-            userInfo.setUserName("user " + i);
-            Long[] gameList = {100L, 101L, 102L};
-            userInfo.setOwnedGames(Arrays.asList(gameList));
-            mUsers.put(userInfo.getUserId(), userInfo);
-        }
-        mCurrentUser = mUsers.get(Long.valueOf(1));
-        GameAchievement gameAchievement = new GameAchievement(mCurrentUser.getUserId(), mCurrentUser.getOwnedGames().get(0));
-        gameAchievement.addAchievement("爆头率", "21%");
-        gameAchievement.addAchievement("已杀僵尸", "350014");
-        gameAchievement.addAchievement("失败数", "155");
-        gameAchievement.addAchievement("已玩时间", "302小时");
-        gameAchievement.addAchievement("本周总分", "15963586215");
-        mCurrentUser.addAchievement(gameAchievement);
     }
 
     public void setCurrentUser(UserInfo user) {
@@ -68,6 +50,17 @@ public class UserInfoService {
     }
 
     public boolean login(String username, String password) {
-        return false;
+        UserInfo loginUser = mUserRepo.getUserInfoByName(username, password);
+        if (loginUser == null) {
+            return false;
+        }
+        setCurrentUser(loginUser);
+        return true;
+    }
+
+    public UserInfo register(UserInfo newUser) {
+        newUser.setUserId(++mUserCount);
+        mUserRepo.insert(newUser);
+        return newUser;
     }
 }

@@ -1,7 +1,5 @@
 package com.example.android.tv.model;
 
-import com.example.android.tv.utils.ListXmlParser;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,15 +8,33 @@ import java.util.Map;
 
 public class UserInfo implements Serializable {
     private Long mUserId;
-    private CharSequence mUserName;
+    private String mUserName;
     private String mUserIcon;
+    private String mUserPassword;
     private Long mUserPoints;
+    private String mUserEmail;
     private List<Long> mOwnedGames;
     private Map<Long, GameAchievement> mAchievements;
 
     public UserInfo() {
         mOwnedGames = new ArrayList<Long>();
         mAchievements = new HashMap<Long, GameAchievement>();
+    }
+
+    public void setUserEmail(String userEmail) {
+        mUserEmail = userEmail;
+    }
+
+    public String getUserEmail() {
+        return mUserEmail;
+    }
+
+    public void setUserPassword(String userPassword) {
+        mUserPassword = userPassword;
+    }
+
+    public String getUserPassword() {
+        return mUserPassword;
     }
 
     public void setUserIcon(String userIcon) {
@@ -45,11 +61,11 @@ public class UserInfo implements Serializable {
         return mUserId;
     }
 
-    public void setUserName(CharSequence userName) {
+    public void setUserName(String userName) {
         mUserName = userName;
     }
 
-    public CharSequence getUserName() {
+    public String getUserName() {
         return mUserName;
     }
 

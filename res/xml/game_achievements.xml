@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GameAchievements>
+    <achievement>
+        <userId>1</userId>
+        <gameId>1</gameId>
+        <items>
+            <item>
+                <key>爆头率</key>
+                <value>21%</value>
+            </item>
+            <item>
+                <key>已杀僵尸</key>
+                <value>350014</value>
+            </item>
+            <item>
+                <key>失败数</key>
+                <value>155</value>
+            </item>
+            <item>
+                <key>已玩时间</key>
+                <value>302小时</value>
+            </item>
+            <item>
+                <key>本周总分</key>
+                <value>15963586215</value>
+            </item>
+        </items>
+    </achievement>
+</GameAchievements>
